@@ -1,0 +1,9 @@
+<view class="titleView">
+  <input class="testInput" placeholder="输入测试商户ID" bindinput="testInput" value="{{tenantId}}"></input>
+  <button bindtap="startChat">和客服聊天</button>
+</view>
+<view class="commodityLabel" bindtap="goodsChat">询问商品 默认客服ID: 6969_1</view>
+<view class="commodityLabel" bindtap="orderChat">咨询商品订单  默认客服ID: 6969_1</view>
+<view class="commodityLabel" bindtap="sureOrderChat">确认商品订单  默认客服ID: 6969_1</view>
+
+

@@ -1,0 +1,118 @@
+<view class="baseView">
+  <scroll-view scroll-y enable-flex="YES" style="top:{{recycleTop}}px;left:0px;width:{{recycleWidth}}px;height:{{recycleHeight}}px;position:fixed;" scroll-into-view="{{scrollToView}}">
+    <view wx:for="{{array}}" wx:key="{{index}}" id="{{item.serverSeq}}">
+    <!-- 接收消息 消息类型 TEXT -->
+      <view class="receiveTextView" wx:if="{{item.direction == 'OUT' && item.type == 'TEXT'}}">
+        <image class="headImage" mode="aspectFill" src="../../static/images/head.jpg"></image>
+        <view class="contentLabel">{{item.content}}</view>
+      </view>
+     <!-- 接收消息 机器人消息 FAQ -->
+      <view  class="receiveFAQView" wx:elif="{{item.direction == 'OUT' && item.type == 'FAQ'}}">
+        <image class="headImage" mode="aspectFill" src="../../static/images/head.jpg"></image>
+        <view class="faqContentLabel">
+          <view class="title">常见问题</view>
+          <view class="content" wx:for="{{item.content}}" wx:for-item="cell" wx:key="index" id="{{cell.faqId}}" data-hi="{{cell.chatbotMessage}}" bindtap="clickFaqView">
+            {{cell.chatbotMessage}}
+          </view>
+        </view>
+      </view>
+      <!-- 接收消息 机器人消息 MANUAL -->
+      <view class="receiveMANUALView" wx:elif="{{item.direction == 'OUT' && item.type == 'MANUAL'}}">
+        <image class="headImage" mode="aspectFill" src="../../static/images/head.jpg"></image>
+        <view class="contentView">
+          <label>{{item.content}}</label>
+          <label bindtap="connectAgentServer" class="titleLabel">人工服务</label>
+        </view>
+      </view>
+      <!-- 接收消息 系统提示信息 STATUS-->
+      <view class="agentStatusView" wx:elif="{{item.type == 'STATUS'}}">
+        <label class="statusLabel">{{item.content}}</label>
+      </view>
+      <!-- 接收消息 结束会话评价信息 SATISFACTION-->
+      <view class="satisFactionView" wx:elif="{{item.direction == 'OUT' && item.type == 'SATISFACTION'}}">
+        <view class="label">{{item.content.satisfiedMsg}}</view>
+        <button data-hi="{{item.content.satisfiedContent}}" data-contextid="{{item.contextId}}" id="{{item.serverSeq}}" bindtap="clickSatisFaction">评价</button>
+      </view>
+      <!-- 接收消息 图片消息 IMAGE -->
+      <view class="agentView" wx:elif="{{item.direction == 'OUT' && item.type == 'IMAGE'}}">
+        <image class="headImage" mode="aspectFill" src="../../static/images/head.jpg"></image>
+        <image class="contentImage" mode="aspectFill" src="{{item.content.appImg.url}}"></image>
+      </view>
+      <!-- 接收消息 商品信息 GOODS -->
+      <view class="goodsView" wx:elif="{{item.direction == 'OUT' && item.type == 'GOODS'}}">
+        <image class="goodsImage" mode="aspectFill" src="{{item.content.image}}"></image>
+        <view class="goodsBaseView">
+          <view class="titleView">{{item.content.title}}</view>
+          <view class="bottomView">
+            <view class="leftVeiw">
+              <label class="symbolLabel">¥</label>
+              <label class="priceLabel">{{item.content.price}}</label>
+            </view>
+            <button data-content="{{item.content}}" bindtap="clickGoods">咨询该商品</button>
+          </view>
+        </view>
+      </view>
+      <!-- 接收消息 商品信息 ORDER -->
+      <view class="orderView" wx:elif="{{item.direction == 'OUT' && item.type == 'ORDER'}}">
+        <view class="orderserialView">订单编号：{{item.content.orderId}}</view>
+        <view class="orderBaseView">
+          <image class="orderImage" mode="aspectFill" src="{{item.content.image}}"></image>
+          <view class="orderContentView">
+            <view class="orderTitleView">{{item.content.title}}</view>
+            <view class="orderPriceBaseView">
+               <label class="orderNumberLabel">{{item.content.numberGoods}}件商品  合计: </label>
+               <label class="orderSymbolLabel"> ¥ </label>
+              <label class="orderPriceLabel">{{item.content.price}}</label>
+            </view>
+            <button class="orderButton" data-content="{{item.content}}" bindtap="clickOrder">咨询该订单</button>
+          </view>
+        </view>
+      </view>
+      <!-- 接收消息 消息类型 LOCATION -->
+      <view class="sureOrderView" wx:elif="{{item.direction == 'OUT' && item.type == 'SUREORDER'}}">
+        <view class="sureTitView">亲，请您核对订单信息</view>
+        <view class="sureOrderMessageView">
+          <image class="orderImage" mode="aspectFill" src="{{item.content.image}}"></image>
+          <view class="sureContentView">
+            <view class="sureContentTitleView">{{item.content.title}}</view>
+              <view class="sureContentPriceView">
+                <label>共计{{item.content.numberGoods}}件商品，合计：</label>
+                <label class="sureSymbolView">¥</label>
+                <label>{{item.content.price}}</label>
+              </view>
+              <view class="sureContentOrderView">订单号：{{item.content.orderId}}</view>
+            </view>
+          </view>
+        <view class="sureConsigneeView">姓名：{{item.content.name}}</view>
+        <view class="surePhoneView">电话：{{item.content.phone}}</view>
+        <view class="sureAddressView">地址：{{item.content.address}}</view>
+        <button class="sureSureButton" data-content="{{item.content}}" bindtap="clickSureOrder">确认</button>
+      </view>
+      <!-- 发出消息 消息类型 IMAGE -->
+      <view class="clientView" wx:elif="{{item.direction == 'IN' && item.type == 'IMAGE'}}">
+        <image class="headImage" mode="aspectFill" src="../../static/images/head.jpg"></image>
+        <image class="contentImage" mode="aspectFill" src="{{item.content.appImg.url}}"></image>
+      </view>
+      <!-- 发出消息 消息类型 TEXT -->
+      <view class="clientView" wx:else>
+        <image class="headImage" mode="aspectFill" src="../../static/images/head.jpg"></image>
+        <view class="contentLabel">{{item.content}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 背景图，用来收回键盘 -->
+  <view class="{{keyBoardViewIsHidden==1?'keyBoardBaseViewHidden':'keyBoardBaseView'}}" bindtap="hiddenKeyBoard"></view>
+  <!-- 键盘输入框视图 -->
+  <view animation="{{animation}}" class="inputBaseView">
+    <view class="inputView">
+      <input placeholder="请输入" value="{{inputValue}}" confirm-type="send" cursor-spacing="50rpx" bindconfirm="sendMessage" bindblur="startbindblur" confirm-hold="true" focus="{{focus}}"></input>
+      <image src="../../static/images/keyboard_add.png" bindtap="clickAddButton"></image>
+    </view>
+    <view class="addView" bindtap="clickAddImage">
+      <image class="addImage" src="../../static/images/keyboard_add_photo.png"></image>
+      <view class="addImageTitle">照片</view>
+    </view>
+  </view>
+</view>
+
+<common-view isHidden="{{agentStatus}}" serviceTitle="{{serverTitle}}" catchclickLevaeMessage="clickLevaeMessage" catchclickCancelView="clickCancelView" catchclickShopView="clickShopView" catchclickServiceView="clickServiceView"></common-view>

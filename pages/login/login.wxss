@@ -1,0 +1,20 @@
+.baseView {
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -100%);
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 10rpx;
+}
+.baseView input {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  padding: 0rpx 15rpx;
+}
+
+.baseView button {
+  margin: 60rpx 30rpx 20rpx 30rpx;
+}

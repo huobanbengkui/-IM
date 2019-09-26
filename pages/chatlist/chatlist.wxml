@@ -1,0 +1,13 @@
+<recycle-view batch="{{batchSetRecycleData}}" id="recycleId">
+  <recycle-item class="cellView" wx:for="{{recycleList}}" wx:key="{{index}}" bindtap="pushToChatView" id="{{index}}">
+    <view class="imageView">
+      <view class="numberIcon" wx:if="{{item.unreadMessageNumber > 0}}">{{item.unreadMessageNumber}}</view>
+      <image mode="aspectFill" src="{{item.imageUrl}}"></image>
+    </view>
+    <view class="contentView">
+      <view class="titleLabel">{{item.tenantId}}</view>
+      <view class="contentLabel">{{item.lastMessage}}</view>
+    </view>
+    <view class="timeView">{{item.time}}</view>
+  </recycle-item>
+</recycle-view>

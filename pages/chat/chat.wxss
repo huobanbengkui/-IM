@@ -1,0 +1,498 @@
+page {
+  background-color: #FAFAFA;
+}
+.baseView {
+  display: flex;
+  flex-direction: column;
+}
+/*
+* 上部可滑动视图
+*/
+scroll-view {
+  word-break: break-all;
+}
+/*
+* 接收消息，消息类型Text
+*/
+.receiveTextView {
+  display: flex;
+  flex-direction: row;
+  margin-top:20rpx; 
+  padding: 0rpx 20rpx 20rpx 20rpx;
+}
+.receiveTextView .headImage {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.receiveTextView .contentLabel {
+  display: flex;
+  align-items: center;
+  max-width: 65%;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  color: #333333;
+  padding: 20rpx 20rpx 10rpx 20rpx;
+  background-color: #FFEAE8;
+  border-radius: 10rpx;
+}
+/*
+* 接收消息 机器人消息 FAQ
+*/
+.receiveFAQView {
+  display: flex;
+  flex-direction: row;
+  margin-top:20rpx; 
+  padding: 0rpx 20rpx 20rpx 20rpx;
+}
+.receiveFAQView .headImage {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.receiveFAQView .faqContentLabel {
+  display: flex;
+  flex-direction: column;
+  max-width: 65%;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  color: #333333;
+  background-color: #FFEAE8;
+  border-radius: 10rpx;
+}
+.receiveFAQView .faqContentLabel .title {
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  border-bottom: 3rpx solid #D5CAC8;
+}
+.receiveFAQView .faqContentLabel .content {
+  padding: 10rpx 20rpx 0rpx 20rpx;
+  color: #2A91F0;
+}
+.receiveFAQView .faqContentLabel .content:last-child {
+  padding: 10rpx 20rpx 20rpx 20rpx;
+  color: #2A91F0;
+}
+/*
+* 接收消息 机器人消息 FAQ
+*/
+.receiveMANUALView {
+  display: flex;
+  flex-direction: row;
+  margin-top:20rpx; 
+  padding: 0rpx 20rpx 20rpx 20rpx;
+}
+.receiveMANUALView .headImage {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.receiveMANUALView .contentView {
+  max-width: 65%;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  color: #333333;
+  background-color: #FFEAE8;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+.receiveMANUALView .contentView .titleLabel {
+  color: #635CF5;
+  text-decoration: underline;
+}
+/*
+* 系统提示消息
+*/
+.agentStatusView {
+  text-align: center;
+  margin: 10rpx 20rpx 30rpx 20rpx;
+}
+.agentStatusView .statusLabel {
+  font-size: 24rpx;
+  padding: 10rpx 20rpx;
+  color: #A1B0B8;
+  background-color: #EBEBEB;
+  border-radius: 10rpx;
+  display: inline-block
+}
+/*
+* 会话结束 评价消息
+*/
+.satisFactionView {
+  text-align: center;
+  margin: 20rpx auto 30rpx auto;
+  width: 70%;
+  background-color: #ffffff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+.satisFactionView button {
+  width: 140rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font: 26rpx;
+  margin-top: 20rpx;
+  color: #ffffff;
+  background-color: #FF7401;
+  border-radius: 30rpx;
+}
+/*
+* 接收到的图片
+*/
+.agentView {
+  display: flex;
+  flex-direction: row;
+  margin-top:20rpx; 
+  padding: 0rpx 20rpx 20rpx 20rpx;
+}
+.agentView .contentImage {
+  max-width: 65%;
+  max-height: 400rpx;
+  margin-left: 20rpx;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  background-color: #FFEAE8;
+  border-radius: 10rpx;
+}
+/*
+* Goods类型商品信息
+*/
+.goodsView {
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx 30rpx 40rpx 30rpx;
+  height: 200rpx;
+  background-color: #ffffff;
+}
+.goodsView .goodsImage {
+  height: 160rpx;
+  width: 160rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.goodsView .goodsBaseView {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 15rpx 20rpx 20rpx 20rpx;
+}
+.goodsView .goodsBaseView .titleView {
+  font-size: 26rpx;
+  color: #333333;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:2; 
+  -webkit-box-orient:vertical;
+  word-break: break-all;
+}
+.goodsView .goodsBaseView .bottomView {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.goodsView .goodsBaseView .bottomView .leftVeiw {
+  position: absolute;
+  bottom: 0;
+}
+.goodsView .goodsBaseView .bottomView .leftVeiw .symbolLabel {
+  font-size: 24rpx;
+}
+.goodsView .goodsBaseView .bottomView .leftVeiw .priceLabel {
+  font-size: 34rpx;
+}
+.goodsView .goodsBaseView .bottomView button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 180rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 24rpx;
+  border-radius: 24rpx;
+  background-color: #FF7401;
+  color: #ffffff;
+}
+/*
+* Order类型商品信息
+*/
+.orderView {
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx 30rpx 40rpx 30rpx;
+  height: 280rpx;
+  background-color: #ffffff;
+}
+.orderView .orderserialView {
+  margin: 20rpx 20rpx 0rpx 20rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #333333;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:1; 
+  -webkit-box-orient:vertical;
+  word-break: break-all;
+}
+.orderView .orderBaseView {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  margin: 0rpx 20rpx 20rpx 20rpx;
+}
+.orderView .orderBaseView .orderImage {
+  width: 160rpx;
+  height: 160rpx;
+  margin-top: 20rpx;
+}
+.orderView .orderBaseView .orderContentView {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-left: 20rpx;
+  position: relative;
+}
+.orderView .orderBaseView .orderContentView .orderTitleView {
+  font-size: 26rpx;
+  color: #333333;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:2; 
+  -webkit-box-orient:vertical;
+  word-break: break-all;
+  margin-top: 15rpx;
+}
+.orderView .orderBaseView .orderContentView .orderPriceBaseView {
+  display: flex;
+  flex-direction: row;
+  color: #333333;
+  margin-top: 14rpx;
+  position: relative;
+  line-height: 34rpx;
+}
+.orderView .orderBaseView .orderContentView .orderPriceBaseView .orderNumberLabel {
+  font-size: 28rpx;
+}
+.orderView .orderBaseView .orderContentView .orderPriceBaseView .orderSymbolLabel {
+  font-size: 24rpx;
+  padding: 0rpx 5rpx 0rpx 15rpx;
+}
+.orderView .orderBaseView .orderContentView .orderPriceBaseView .orderPriceLabel {
+  font-size: 34rpx;
+}
+.orderView .orderBaseView .orderContentView .orderButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 180rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 24rpx;
+  border-radius: 24rpx;
+  background-color: #FF7401;
+  color: #ffffff;
+}
+/*
+* Location类型商品信息
+*/
+.sureOrderView {
+  background-color: #ffffff;
+  margin: 20rpx 30rpx 40rpx 30rpx;
+  padding-bottom: 10rpx;
+}
+.sureOrderView .sureTitView {
+  padding: 20rpx 20rpx 20rpx 20rpx;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.sureOrderView .sureOrderMessageView {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.sureOrderView .sureOrderMessageView image {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 30rpx 0rpx 30rpx 20rpx;
+}
+.sureOrderView .sureOrderMessageView .sureContentView {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 0rpx 20rpx 0rpx 20rpx;
+}
+.sureOrderView .sureOrderMessageView .sureContentView .sureContentTitleView {
+  font-size: 28rpx;
+  color: #333333;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:2; 
+  -webkit-box-orient:vertical;
+  word-break: break-all;
+  margin-top: 20rpx;
+}
+.sureOrderView .sureOrderMessageView .sureContentView .sureContentPriceView {
+  display: flex;
+  flex-direction: row;
+  color: #666666;
+  height: 26rpx;
+  line-height: 26rpx;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+.sureOrderView .sureOrderMessageView .sureContentView .sureContentPriceView  .sureSymbolView {
+  font-size: 18rpx;
+}
+.sureOrderView .sureOrderMessageView .sureContentView .sureContentOrderView {
+  font-size: 26rpx;
+  color: #666666;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:2; 
+  -webkit-box-orient:vertical;
+  word-break: break-all;
+  line-height: 30rpx;
+  margin-top: 4rpx;
+}
+.sureOrderView .sureConsigneeView {
+  margin: 20rpx 20rpx 0rpx 20rpx;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 28rpx;
+}
+.sureOrderView .surePhoneView {
+  margin: 10rpx 20rpx 0rpx 20rpx;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 28rpx;
+}
+.sureOrderView .sureAddressView {
+  margin: 10rpx 20rpx 0rpx 20rpx;
+  color: #333333;
+  font-size: 28rpx;
+}
+.sureOrderView .sureSureButton {
+  background-color: #FF7401;
+  color: #ffffff;
+  width: 160rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  margin: 20rpx 0rpx 10rpx 500rpx;
+}
+
+/*
+* 发出消息 消息类型 TEXT
+*/
+.clientView {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top:20rpx; 
+  padding: 0rpx 20rpx 20rpx 20rpx;
+}
+.clientView .headImage {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.clientView .contentLabel {
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+  max-width: 65%;
+  font-size: 30rpx;
+  color: #333333;
+  margin-right: 20rpx;
+  padding: 20rpx 20rpx 10rpx 20rpx;
+  background-color: #EEF2FF; 
+  border-radius: 10rpx;
+}
+/*
+* 发出去的图片
+*/
+.clientView .contentImage {
+  max-width: 65%;
+  max-height: 400rpx;
+  margin-right: 20rpx;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  background-color: #FFEAE8;
+  border-radius: 10rpx;
+}
+
+/*
+* 输入框背景图
+*/
+.baseView .keyBoardBaseViewHidden {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  display: none;
+}
+.baseView .keyBoardBaseView {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+/*
+*输入框UI
+*/
+.baseView .inputBaseView {
+  position: fixed;
+  left: 0;
+  bottom: -240rpx;
+  height: 380rpx;
+  width: 100%;
+  background-color: #F7F7F7;
+  border-top: 1rpx solid #cccccc;
+  display: flex;
+  flex-direction: column;
+}
+.baseView .inputBaseView .inputView {
+  display: flex;
+  flex-direction: row;
+  margin: 30rpx 40rpx 0rpx 40rpx;
+  height: 80rpx;
+}
+.inputView input {
+  border: 1rpx solid #cccccc;
+  border-radius: 40rpx;
+  width: 75%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0rpx 20rpx 0rpx 20rpx;
+  background-color: #ffffff;
+  font-size: 34rpx;
+}
+.inputView image {
+  margin: 10rpx 0rpx 0rpx 30rpx;
+  height: 60rpx;
+  width: 60rpx;
+}
+.inputBaseView .addView {
+  margin: 30rpx 0rpx 0rpx 40rpx;
+  height: 160rpx;
+  width: 100rpx;
+  text-align: center;
+}
+.addView .addImage {
+  width: 100rpx;
+  height: 100rpx;
+}
+.addView .addImageTitle {
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333333;
+}

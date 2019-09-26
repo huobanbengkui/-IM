@@ -1,0 +1,5 @@
+<view class="baseView">
+  <input placeholder="手机号" id="phoneText" value="{{phoneText}}" bindinput="textBindInput"></input>
+  <input placeholder="密码" id="passwordText" value="{{passwordText}}" bindinput="textBindInput"></input>
+  <button bindtap="clickLoginButton">登录</button>
+</view>

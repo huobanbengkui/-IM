@@ -1,0 +1,41 @@
+.busyView {
+  position: fixed;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #CAA86E;
+  background-color: #FFF7D8;
+  text-align: center;
+  top: 0rpx;
+  z-index: 998;
+}
+.busyView .leaveView {
+  color: #3132F6;
+  text-decoration:underline;
+}
+.busyView .cancelView {
+  color: #3132F6;
+  text-decoration:underline;
+}
+
+.floatView {
+  background-color: #EFF2FE;
+  width: 60px;
+  height: 70px;
+  z-index: 999;
+  text-align: center;
+  color: #333333;
+}
+.floatView .shopView{
+  height: 20px;
+  line-height: 20px;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #aaaaaa;
+}
+.floatView .serviceView{
+  height: 20px;
+  line-height: 20px;
+  margin-top: 5px;
+}

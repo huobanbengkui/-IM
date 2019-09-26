@@ -1,0 +1,67 @@
+page {
+  background-color: #F6F6F6;
+}
+.cellView {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #eeeeee;
+  padding: 20rpx;
+  background-color: #ffffff;
+}
+.cellView .imageView {
+  height: 100rpx;
+  width: 100rpx;
+  position: relative;
+}
+.cellView image {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.cellView .numberIcon {
+  width: 40rpx;
+  height: 40rpx;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  left: 70rpx;
+  top:-15rpx;
+  color: #ffffff;
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+.contentView {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0rpx 10rpx 0rpx 20rpx;
+}
+.contentView .titleLabel {
+  font-size: 34rpx;
+  color: #333333;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:1; 
+  -webkit-box-orient:vertical;
+  word-break: break-all;
+}
+
+.contentView .contentLabel {
+  font-size: 30rpx;
+  margin-top: 5rpx;
+  color: #999999;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:1; 
+  -webkit-box-orient:vertical;
+  word-break: break-all;
+}
+.timeView {
+  width: 160rpx;
+  font-size: 26rpx;
+  color: #999999;
+  text-align: right;
+}

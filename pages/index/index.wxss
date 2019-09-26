@@ -1,0 +1,23 @@
+/**index.wxss**/
+.titleView {
+  display: flex;
+  margin: 10rpx;
+  border: 2rpx solid #eeeeee;
+}
+.titleView button {
+  width: 200rpx;
+  top: 20rpx;
+  left: 40rpx;
+  height: 60rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+}
+.testInput {
+  height: 100rpx;
+}
+.commodityLabel {
+  margin: 20rpx 20rpx 0rpx 20rpx;
+  padding: 20rpx;
+  background-color: #ffffff;
+  border: 1rpx solid #eeeeee;
+}

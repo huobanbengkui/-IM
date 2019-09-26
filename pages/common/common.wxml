@@ -1,0 +1,12 @@
+<view class="busyView" wx:if="{{isHidden == 0}}">
+  <label>当前客服正忙，</label>
+  <label class="leaveView" catchtap="clickLevaeMessage">请先留言</label>
+  <label>或者</label>
+  <label class="cancelView" catchtap="clickCancelView">取消等待</label>
+</view>
+
+<view class="floatView" bindtouchstart="moveStart" catchtouchmove="moveIng" bindtouchcancel="moveEnd" bindtouchend="moveEnd" style="top:{{buttonTop}}px;left:{{buttonLeft}}px;position:fixed;">
+  <view class="shopView" catchtap=clickShopView">店铺</view>
+  <view class="serviceView" catchtap="clickServiceView">{{serviceTitle}}</view>
+</view>
+
